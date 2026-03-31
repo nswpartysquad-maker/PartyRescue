@@ -37,14 +37,19 @@
           <div><label for="personName">Events Persons Name</label><input id="personName" name="Events Persons Name"></div>
           <div><label for="occasion">Events Occasion</label><input id="occasion" name="Events Occasion"></div>
         </div>
-        <div>
-          <label for="packageSelect">Choose a Package</label>
-          <select id="packageSelect" name="Choose a Package">
-            <option value="">Choose a Package</option>
-            <option>Signature Rescue</option>
-            <option>VIP Party Coach</option>
-            <option>Custom Event Booking</option>
-          </select>
+        <div class="custom-select">
+  <div class="select-btn">Choose a Package</div>
+  <div class="select-options">
+    <div class="option">Birthdays</div>
+    <div class="option">Hen's Party</div>
+    <div class="option">VIP Coach Party</div>
+    <div class="option">Children's Birthday</div>
+    <div class="option">Airport Transfer</div>
+    <div class="option">Custom Event Booking</div>
+  </div>
+</div>
+
+<input type="hidden" name="package" id="selectedPackage" required>
         </div>
         <div class="small"><a href="terms.html" target="_blank" rel="noopener noreferrer">Read All the Terms & Conditions Here</a></div>
         <label class="checkbox-row"><input id="termsCheck" type="checkbox"><span>I've read and agreed to the above terms.</span></label>
