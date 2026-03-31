@@ -37,16 +37,61 @@
           <div><label for="personName">Events Persons Name</label><input id="personName" name="Events Persons Name"></div>
           <div><label for="occasion">Events Occasion</label><input id="occasion" name="Events Occasion"></div>
         </div>
-        <div class="custom-select">
-  <div class="select-btn">Choose a Package</div>
-  <div class="select-options">
-    <div class="option">Birthdays</div>
-    <div class="option">Hen's Party</div>
-    <div class="option">VIP Coach Party</div>
-    <div class="option">Children's Birthday</div>
-    <div class="option">Airport Transfer</div>
-    <div class="option">Custom Event Booking</div>
+        <div class="form-group">
+  <label>Choose a Package</label>
+
+  <div class="custom-select" id="packageSelect">
+    <div class="select-btn">Choose a Package</div>
+
+    <div class="select-options">
+      <div class="option">Birthdays</div>
+      <div class="option">Hen's Party</div>
+      <div class="option">VIP Coach Party</div>
+      <div class="option">Children's Birthday</div>
+      <div class="option">Airport Transfer</div>
+      <div class="option">Custom Event Booking</div>
+    </div>
+    .custom-select {
+  position: relative;
+}
+
+.select-btn {
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* THIS WAS YOUR ISSUE */
+.select-options {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background: #0d0d0f;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.option {
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: rgba(223,47,47,.2);
+}
   </div>
+
+  <input type="hidden" name="package" id="selectedPackage" required>
+      I </div>I
 </div>
 
 <input type="hidden" name="package" id="selectedPackage" required>
@@ -106,5 +151,32 @@
   });
   updateState();
 })();
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const select = document.getElementById("packageSelect");
+  const btn = select.querySelector(".select-btn");
+  const options = select.querySelector(".select-options");
+  const hiddenInput = document.getElementById("selectedPackage");
+
+  btn.addEventListener("click", () => {
+    options.style.display =
+      options.style.display === "block" ? "none" : "block";
+  });
+
+  select.querySelectorAll(".option").forEach(option => {
+    option.addEventListener("click", () => {
+      btn.textContent = option.textContent;
+      hiddenInput.value = option.textContent;
+      options.style.display = "none";
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!select.contains(e.target)) {
+      options.style.display = "none";
+    }
+  });
+});
+</script>
 </script>
 <footer class="footer"><div class="wrap footer-grid"><div><div class="brand">Party <span>Rescue</span></div><p>Luxury party bus and fireman surprise experiences across Sydney for hens nights, birthdays, bucks parties, private charters, and unforgettable group events.</p></div><div><b style="color:#fff">Quick Links</b><p><a href="index.html">Home</a><br><a href="packages.html">Packages</a><br><a href="gallery.html">Gallery</a><br><a href="contact.html">Contact</a><br><a href="terms.html">Terms</a></p></div><div><b style="color:#fff">Contact</b><p><a href="tel:+611300036469">1300 036 469</a><br><a href="mailto:danny@enginenumber9.com.au">danny@enginenumber9.com.au</a><br>Sydney Olympic Park Homebush</p></div></div></footer></body></html>
