@@ -1,0 +1,19 @@
+Upload these photo files into the GitHub repo root with these exact names:
+
+photo-hero.jpg
+photo-interior-day.jpg
+photo-corridor.jpg
+photo-lasers.jpg
+photo-bus-front.jpg
+photo-party-blue.jpg
+photo-party-red.jpg
+photo-party-red-2.jpg
+photo-carry.jpg
+
+Then replace:
+index.html
+packages.html
+gallery.html
+contact.html
+
+Vercel will redeploy automatically.
