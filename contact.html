@@ -81,13 +81,14 @@
       line-height:1.03;
       margin:10px 0 14px
     }
+    h3{margin:0 0 14px}
     .sub{color:var(--muted);font-size:1.08rem;line-height:1.8}
     .contact-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:22px
     }
-    .contact-box,.form-box{
+    .contact-box,.form-box,.terms-block{
       padding:24px;
       border-radius:28px;
       border:1px solid var(--line);
@@ -215,6 +216,28 @@
     }
     .option:hover{background:rgba(223,47,47,.2)}
 
+    .success-popup{
+      position:fixed;
+      left:50%;
+      top:30px;
+      transform:translateX(-50%) translateY(-20px);
+      background:linear-gradient(135deg,#101010,#1b1b1f);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 20px 60px rgba(0,0,0,.45), 0 0 40px rgba(223,47,47,.18);
+      padding:16px 20px;
+      border-radius:18px;
+      z-index:9999;
+      opacity:0;
+      pointer-events:none;
+      transition:all .28s ease;
+      font-weight:700
+    }
+    .success-popup.show{
+      opacity:1;
+      transform:translateX(-50%) translateY(0)
+    }
+
     @media (max-width:1024px){
       .contact-grid,.footer-grid,.split{grid-template-columns:1fr}
     }
@@ -226,6 +249,8 @@
   </style>
 </head>
 <body>
+  <div id="successPopup" class="success-popup">Enquiry Sent ✅</div>
+
   <header class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="index.html">Party <span>Rescue</span></a>
@@ -251,35 +276,34 @@
           <span class="badge">Fast quote replies</span>
           <span class="badge">DM or call to book</span>
         </div>
+
         <div class="list" style="margin-top:20px">
           <div><strong>Phone</strong><br><a href="tel:+611300036469">1300 036 469</a></div>
-          <div><strong>Email</strong><br><a href="mailto:danny@enginenumber9.com.au">danny@enginenumber9.com.au</a></div>
+          <div><strong>Email</strong><br><a href="mailto:info@enginenumber9.com.au">info@enginenumber9.com.au</a></div>
           <div><strong>Location</strong><br>Sydney</div>
-          <div class="terms-block" style="margin-top:20px;">
-  <h3>Out of Area Surcharge</h3>
+        </div>
 
-  <p>
-    A fixed surcharge of <strong>$80.00</strong> applies for bookings outside standard service areas.
-    Additional travel time may be charged depending on distance and location.
-  </p>
-
-  <p class="small">
-    Please refer to the map below to determine if your location falls within the surcharge zone.
-  </p>
-
-  <div style="margin-top:20px">
-    <img 
-      src="photo-surcharge-map.jpg" 
-      alt="Out of area surcharge map Sydney"
-      style="width:100%;border-radius:20px;border:1px solid rgba(255,255,255,.1);box-shadow:0 20px 60px rgba(0,0,0,.5);"
-    >
-  </div>
-
-  <div class="note">
-    For an exact quote including travel time, please submit an enquiry with your pickup location.
-  </div>
+        <div class="terms-block" style="margin-top:20px;">
+          <h3>Out of Area Surcharge</h3>
+          <p>
+            A fixed surcharge of <strong>$80.00</strong> applies for bookings outside standard service areas.
+            Additional travel time may be charged depending on distance and location.
+          </p>
+          <p class="small">
+            Please refer to the map below to determine if your location falls within the surcharge zone.
+          </p>
+          <div style="margin-top:20px">
+            <img
+              src="photo-surcharge-map.jpg"
+              alt="Out of area surcharge map Sydney"
+              style="width:100%;border-radius:20px;border:1px solid rgba(255,255,255,.1);box-shadow:0 20px 60px rgba(0,0,0,.5);"
+            >
+          </div>
+          <div class="note">
+            For an exact quote including travel time, please submit an enquiry with your pickup location.
           </div>
         </div>
+
         <div class="note">Out of area surcharge starts from $80.00. Toll is $25 per usage. Read the full terms before submitting your enquiry.</div>
       </div>
 
@@ -287,7 +311,9 @@
         <div class="kicker">Booking Form</div>
         <h1 style="font-size:clamp(2rem,4vw,3.2rem)">Enquire Now</h1>
 
-        <form id="enquiryForm" class="form-grid" action="mailto:danny@enginenumber9.com.au" method="post" enctype="text/plain">
+        <form id="enquiryForm" class="form-grid" action="https://formspree.io/f/xayzabcd" method="POST">
+          <input type="hidden" name="_subject" value="New Party Rescue Enquiry">
+
           <div>
             <label for="contactName">Contact Name</label>
             <input id="contactName" name="Contact Name" required>
@@ -352,7 +378,7 @@
                 <div class="option">Custom Event Booking</div>
               </div>
             </div>
-            <input type="hidden" name="package" id="selectedPackage" required>
+            <input type="hidden" name="Package" id="selectedPackage" required>
           </div>
 
           <div class="small">
@@ -393,7 +419,7 @@
       </div>
       <div>
         <b style="color:#fff">Contact</b>
-        <p><a href="tel:+611300036469">1300 036 469</a><br><a href="mailto:danny@enginenumber9.com.au">danny@enginenumber9.com.au</a><br>Sydney</p>
+        <p><a href="tel:+611300036469">1300 036 469</a><br><a href="mailto:info@enginenumber9.com.au">info@enginenumber9.com.au</a><br>Sydney</p>
       </div>
     </div>
   </footer>
@@ -410,6 +436,7 @@
       const termsCheck = document.getElementById('termsCheck');
       const submitBtn = document.getElementById('submitBtn');
       const form = document.getElementById('enquiryForm');
+      const popup = document.getElementById('successPopup');
 
       const select = document.getElementById('packageSelect');
       const btn = select.querySelector('.select-btn');
@@ -462,18 +489,51 @@
         submitBtn.style.cursor = submitBtn.disabled ? 'not-allowed' : 'pointer';
       }
 
+      function showSuccess() {
+        popup.classList.add('show');
+        setTimeout(function () {
+          popup.classList.remove('show');
+        }, 2600);
+      }
+
       captchaAnswer.addEventListener('input', updateState);
       termsCheck.addEventListener('change', updateState);
 
-      form.addEventListener('submit', function (e) {
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
         const captchaOk = Number(captchaAnswer.value) === answer;
         const termsOk = termsCheck.checked;
         const packageOk = hiddenInput.value.trim() !== '';
 
         if (!(captchaOk && termsOk && packageOk)) {
-          e.preventDefault();
           updateState();
           alert('Please choose a package, agree to the terms, and complete the captcha correctly before sending.');
+          return;
+        }
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            form.reset();
+            hiddenInput.value = '';
+            selectedText.textContent = 'Choose a Package';
+            captchaAnswer.value = '';
+            termsCheck.checked = false;
+            captchaStatus.textContent = 'Please solve the captcha correctly before sending.';
+            captchaStatus.className = 'status small';
+            showSuccess();
+            updateState();
+          } else {
+            alert('There was a problem sending your enquiry. Please try again.');
+          }
+        } catch (error) {
+          alert('There was a problem sending your enquiry. Please try again.');
         }
       });
 
