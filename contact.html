@@ -1,544 +1,237 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact | Party Rescue Sydney</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#060606;
-      --line:rgba(255,255,255,.08);
-      --text:#f5f5f7;
-      --muted:#b7b7bf;
-      --red:#df2f2f;
-      --red2:#ff6b57;
-      --shadow:0 24px 70px rgba(0,0,0,.45);
-      --glow:0 24px 70px rgba(223,47,47,.22)
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter,Arial,sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at top right, rgba(223,47,47,.18), transparent 28%),
-        radial-gradient(circle at top left, rgba(255,255,255,.05), transparent 18%),
-        linear-gradient(180deg,#040404,#070707 38%,#050505)
-    }
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .wrap{max-width:1220px;margin:0 auto;padding:0 22px}
-    .nav{
-      position:sticky;top:0;z-index:50;
-      background:rgba(6,6,6,.76);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--line)
-    }
-    .nav-inner{
-      min-height:80px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:16px
-    }
-    .brand{font-size:1.2rem;font-weight:900;letter-spacing:-.03em}
-    .brand span{color:var(--red2)}
-    .links{display:flex;gap:10px;flex-wrap:wrap}
-    .links a{padding:10px 14px;border-radius:999px;color:#ddd;transition:.2s ease}
-    .links a:hover,.links a.active{background:rgba(255,255,255,.06);color:#fff}
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:14px 20px;
-      border-radius:16px;
-      font-weight:800;
-      transition:transform .2s ease
-    }
-    .btn:hover{transform:translateY(-1px)}
-    .btn-primary{
-      background:linear-gradient(135deg,var(--red),var(--red2));
-      box-shadow:var(--glow);
-      color:#fff;
-      border:none;
-      cursor:pointer
-    }
-    .section{padding:80px 0}
-    .kicker{
-      font-size:.78rem;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.18em;
-      color:#ff9f94
-    }
-    h1{
-      font-size:clamp(2.5rem,5vw,4.8rem);
-      letter-spacing:-.04em;
-      line-height:1.03;
-      margin:10px 0 14px
-    }
-    h3{margin:0 0 14px}
-    .sub{color:var(--muted);font-size:1.08rem;line-height:1.8}
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:22px
-    }
-    .contact-box,.form-box,.terms-block{
-      padding:24px;
-      border-radius:28px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
-      box-shadow:var(--shadow)
-    }
-    .list{display:grid;gap:10px;margin-top:16px}
-    .list div{
-      padding:12px 14px;
-      border:1px solid rgba(255,255,255,.05);
-      background:rgba(255,255,255,.04);
-      border-radius:14px
-    }
-    .badge{
-      display:inline-block;
-      padding:8px 12px;
-      border-radius:999px;
-      background:rgba(255,255,255,.05);
-      border:1px solid var(--line);
-      font-size:.92rem;
-      color:#ddd;
-      margin:6px 8px 0 0
-    }
-    .note{
-      margin-top:18px;
-      padding:16px 18px;
-      border-radius:18px;
-      background:rgba(255,255,255,.04);
-      border:1px solid var(--line);
-      color:#ddd;
-      line-height:1.7
-    }
-    .form-grid{display:grid;gap:14px}
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    label{
-      font-size:.92rem;
-      font-weight:700;
-      color:#f0f0f2;
-      display:block;
-      margin:0 0 8px
-    }
-    input,textarea{
-      width:100%;
-      padding:15px 16px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      color:#fff;
-      outline:none
-    }
-    textarea{min-height:140px;resize:vertical}
-    .small{font-size:.95rem;color:var(--muted);line-height:1.7}
-    .checkbox-row{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding:14px 16px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04)
-    }
-    .checkbox-row input{
-      width:18px;
-      height:18px;
-      margin-top:3px
-    }
-    .captcha-box{
-      padding:16px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04)
-    }
-    .status{margin-top:6px;font-size:.92rem}
-    .ok{color:#8df0a0}
-    .bad{color:#ff9e9e}
-    .footer{
-      padding:36px 0;
-      border-top:1px solid var(--line);
-      color:#9b9ba4
-    }
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1.4fr .8fr .8fr;
-      gap:24px
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Party Rescue Sydney</title>
 
-    .custom-select{position:relative}
-    .select-btn{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      width:100%;
-      padding:15px 16px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      color:#fff;
-      cursor:pointer;
-      font-weight:600
-    }
-    .select-btn:hover{border-color:rgba(255,255,255,.18)}
-    .select-btn .arrow{
-      font-size:12px;
-      opacity:.75;
-      transition:transform .2s ease
-    }
-    .custom-select.active .arrow{transform:rotate(180deg)}
-    .select-options{
-      display:none;
-      position:absolute;
-      top:calc(100% + 8px);
-      left:0;
-      right:0;
-      background:#0d0d0f;
-      border:1px solid var(--line);
-      border-radius:16px;
-      overflow:hidden;
-      z-index:100;
-      box-shadow:var(--shadow)
-    }
-    .option{
-      padding:14px 16px;
-      cursor:pointer;
-      color:#fff
-    }
-    .option:hover{background:rgba(223,47,47,.2)}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-    .success-popup{
-      position:fixed;
-      left:50%;
-      top:30px;
-      transform:translateX(-50%) translateY(-20px);
-      background:linear-gradient(135deg,#101010,#1b1b1f);
-      color:#fff;
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:0 20px 60px rgba(0,0,0,.45), 0 0 40px rgba(223,47,47,.18);
-      padding:16px 20px;
-      border-radius:18px;
-      z-index:9999;
-      opacity:0;
-      pointer-events:none;
-      transition:all .28s ease;
-      font-weight:700
-    }
-    .success-popup.show{
-      opacity:1;
-      transform:translateX(-50%) translateY(0)
-    }
-
-    @media (max-width:1024px){
-      .contact-grid,.footer-grid,.split{grid-template-columns:1fr}
-    }
-    @media (max-width:760px){
-      .links{display:none}
-      .btn{width:100%}
-      .section{padding-top:66px}
-    }
-  </style>
+<style>
+:root{
+--bg:#060606;
+--line:rgba(255,255,255,.08);
+--text:#f5f5f7;
+--muted:#b7b7bf;
+--red:#df2f2f;
+--red2:#ff6b57;
+--shadow:0 24px 70px rgba(0,0,0,.45);
+--glow:0 24px 70px rgba(223,47,47,.22)
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Inter,Arial,sans-serif;
+color:var(--text);
+background:linear-gradient(180deg,#040404,#070707,#050505)
+}
+.wrap{max-width:1200px;margin:auto;padding:20px}
+.btn{
+padding:14px 20px;
+border-radius:16px;
+font-weight:800;
+background:linear-gradient(135deg,var(--red),var(--red2));
+color:#fff;border:none;cursor:pointer
+}
+.form-box{
+padding:24px;
+border-radius:24px;
+border:1px solid var(--line);
+background:#111;
+box-shadow:var(--shadow)
+}
+input,textarea{
+width:100%;
+padding:14px;
+border-radius:14px;
+border:1px solid var(--line);
+background:#0d0d0f;
+color:#fff
+}
+textarea{min-height:120px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.custom-select{position:relative}
+.select-btn{
+padding:14px;
+border-radius:14px;
+border:1px solid var(--line);
+background:#0d0d0f;
+cursor:pointer
+}
+.select-options{
+display:none;
+position:absolute;
+top:110%;
+left:0;
+right:0;
+background:#111;
+border-radius:14px;
+border:1px solid var(--line);
+z-index:100
+}
+.option{padding:12px;cursor:pointer}
+.option:hover{background:rgba(223,47,47,.2)}
+.success-popup{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+background:#111;
+padding:14px 18px;
+border-radius:14px;
+opacity:0;
+transition:.3s;
+border:1px solid var(--line)
+}
+.success-popup.show{opacity:1}
+</style>
 </head>
+
 <body>
-  <div id="successPopup" class="success-popup">Enquiry Sent ✅</div>
 
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="index.html">Party <span>Rescue</span></a>
-      <nav class="links">
-        <a href="index.html">Home</a>
-        <a href="packages.html">Packages</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html" class="active">Contact</a>
-        <a href="terms.html">Terms</a>
-      </nav>
-      <a class="btn btn-primary" href="contact.html">Book Now</a>
-    </div>
-  </header>
+<div id="successPopup" class="success-popup">Enquiry Sent ✅</div>
 
-  <section class="section">
-    <div class="wrap contact-grid">
-      <div class="contact-box">
-        <div class="kicker">Enquire Now</div>
-        <h1>Check availability for your date.</h1>
-        <p class="sub">Fill in the booking details below. The form will only send once the terms checkbox is ticked and the captcha is answered correctly.</p>
-        <div>
-          <span class="badge">Sydney wide service</span>
-          <span class="badge">Fast quote replies</span>
-          <span class="badge">DM or call to book</span>
-        </div>
+<div class="wrap">
 
-        <div class="list" style="margin-top:20px">
-          <div><strong>Phone</strong><br><a href="tel:+611300036469">1300 036 469</a></div>
-          <div><strong>Email</strong><br><a href="mailto:info@enginenumber9.com.au">info@enginenumber9.com.au</a></div>
-          <div><strong>Location</strong><br>Sydney</div>
-        </div>
+<div class="form-box">
+<h2>Enquire Now</h2>
 
-        <div class="terms-block" style="margin-top:20px;">
-          <h3>Out of Area Surcharge</h3>
-          <p>
-            A fixed surcharge of <strong>$80.00</strong> applies for bookings outside standard service areas.
-            Additional travel time may be charged depending on distance and location.
-          </p>
-          <p class="small">
-            Please refer to the map below to determine if your location falls within the surcharge zone.
-          </p>
-          <div style="margin-top:20px">
-            <img
-              src="photo-surcharge-map.jpg"
-              alt="Out of area surcharge map Sydney"
-              style="width:100%;border-radius:20px;border:1px solid rgba(255,255,255,.1);box-shadow:0 20px 60px rgba(0,0,0,.5);"
-            >
-          </div>
-          <div class="note">
-            For an exact quote including travel time, please submit an enquiry with your pickup location.
-          </div>
-        </div>
+<form id="enquiryForm" action="https://formspree.io/f/xlgonevw" method="POST">
 
-        <div class="note">Out of area surcharge starts from $80.00. Toll is $25 per usage. Read the full terms before submitting your enquiry.</div>
-      </div>
+<input type="hidden" name="_subject" value="New Party Rescue Enquiry">
+<input type="hidden" name="_replyto" id="replyToField">
 
-      <div class="form-box">
-        <div class="kicker">Booking Form</div>
-        <h1 style="font-size:clamp(2rem,4vw,3.2rem)">Enquire Now</h1>
+<label>Contact Name</label>
+<input name="name" required>
 
-        <form id="enquiryForm" class="form-grid" action="https://formspree.io/f/xayzabcd" method="POST">
-          <input type="hidden" name="_subject" value="New Party Rescue Enquiry">
+<div class="split">
+<div>
+<label>Contact Number</label>
+<input name="phone" required>
+</div>
 
-          <div>
-            <label for="contactName">Contact Name</label>
-            <input id="contactName" name="Contact Name" required>
-          </div>
+<div>
+<label>Email Address</label>
+<input id="emailAddress" name="email" type="email" required>
+</div>
+</div>
 
-          <div class="split">
-            <div>
-              <label for="contactNumber">Contact Number</label>
-              <input id="contactNumber" name="Contact Number" required>
-            </div>
-            <div>
-              <label for="emailAddress">Email Address</label>
-              <input id="emailAddress" name="Email Address" type="email" required>
-            </div>
-          </div>
+<div class="split">
+<div>
+<label>Booking Date</label>
+<input type="date" name="date" required>
+</div>
 
-          <div class="split">
-            <div>
-              <label for="bookingDate">Booking Date *</label>
-              <input id="bookingDate" name="Booking Date" type="date" required>
-            </div>
-            <div>
-              <label for="pickupTime">Estimated Pickup Time *</label>
-              <input id="pickupTime" name="Estimated Pickup Time" type="time" required>
-            </div>
-          </div>
+<div>
+<label>Pickup Time</label>
+<input type="time" name="time" required>
+</div>
+</div>
 
-          <div>
-            <label for="pickupAddress">Pickup Address</label>
-            <input id="pickupAddress" name="Pickup Address">
-          </div>
+<label>Pickup Address</label>
+<input name="pickup">
 
-          <div>
-            <label for="dropoffAddress">Drop-off Address</label>
-            <input id="dropoffAddress" name="Drop-off Address">
-          </div>
+<label>Drop-off Address</label>
+<input name="dropoff">
 
-          <div class="split">
-            <div>
-              <label for="personName">Events Persons Name</label>
-              <input id="personName" name="Events Persons Name">
-            </div>
-            <div>
-              <label for="occasion">Events Occasion</label>
-              <input id="occasion" name="Events Occasion">
-            </div>
-          </div>
+<div class="split">
+<input name="person" placeholder="Event Person Name">
+<input name="occasion" placeholder="Event Occasion">
+</div>
 
-          <div class="form-group">
-            <label>Choose a Package</label>
-            <div class="custom-select" id="packageSelect">
-              <div class="select-btn">
-                <span id="selectedText">Choose a Package</span>
-                <span class="arrow">▼</span>
-              </div>
-              <div class="select-options">
-                <div class="option">Birthdays</div>
-                <div class="option">Hen's Party</div>
-                <div class="option">VIP Coach Party</div>
-                <div class="option">Children's Birthday</div>
-                <div class="option">Airport Transfer</div>
-                <div class="option">Custom Event Booking</div>
-              </div>
-            </div>
-            <input type="hidden" name="Package" id="selectedPackage" required>
-          </div>
+<label>Choose Package</label>
+<div class="custom-select" id="packageSelect">
+<div class="select-btn" id="selectedText">Choose a Package</div>
 
-          <div class="small">
-            <a href="terms.html" target="_blank" rel="noopener noreferrer">Read All the Terms & Conditions Here</a>
-          </div>
+<div class="select-options">
+<div class="option">Birthdays</div>
+<div class="option">Hen's Party</div>
+<div class="option">VIP Coach Party</div>
+<div class="option">Children's Birthday</div>
+<div class="option">Airport Transfer</div>
+<div class="option">Custom Event Booking</div>
+</div>
+</div>
 
-          <label class="checkbox-row">
-            <input id="termsCheck" type="checkbox">
-            <span>I've read and agreed to the above terms.</span>
-          </label>
+<input type="hidden" name="package" id="selectedPackage" required>
 
-          <div class="captcha-box">
-            <label for="captchaAnswer" id="captchaLabel">Captcha</label>
-            <input id="captchaAnswer" type="number" inputmode="numeric" placeholder="Enter answer">
-            <div id="captchaStatus" class="status small">Please solve the captcha correctly before sending.</div>
-          </div>
+<label>
+<input type="checkbox" id="termsCheck"> I agree to terms
+</label>
 
-          <div>
-            <label for="comments">SPECIAL NEEDS / ADDITIONAL COMMENTS</label>
-            <textarea id="comments" name="SPECIAL NEEDS / ADDITIONAL COMMENTS"></textarea>
-          </div>
+<label>Captcha: <span id="captchaText"></span></label>
+<input id="captchaInput" type="number">
 
-          <button id="submitBtn" class="btn btn-primary" type="submit" disabled>Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
+<textarea name="message" placeholder="Additional comments"></textarea>
 
-  <footer class="footer">
-    <div class="wrap footer-grid">
-      <div>
-        <div class="brand">Party <span>Rescue</span></div>
-        <p>Luxury party bus and fireman surprise experiences across Sydney for hens nights, birthdays, bucks parties, private charters, and unforgettable group events.</p>
-      </div>
-      <div>
-        <b style="color:#fff">Quick Links</b>
-        <p><a href="index.html">Home</a><br><a href="packages.html">Packages</a><br><a href="gallery.html">Gallery</a><br><a href="contact.html">Contact</a><br><a href="terms.html">Terms</a></p>
-      </div>
-      <div>
-        <b style="color:#fff">Contact</b>
-        <p><a href="tel:+611300036469">1300 036 469</a><br><a href="mailto:info@enginenumber9.com.au">info@enginenumber9.com.au</a><br>Sydney</p>
-      </div>
-    </div>
-  </footer>
+<button id="submitBtn" class="btn" disabled>Send Message</button>
 
-  <script>
-    (function () {
-      const a = Math.floor(Math.random() * 8) + 2;
-      const b = Math.floor(Math.random() * 8) + 1;
-      const answer = a + b;
+</form>
+</div>
+</div>
 
-      const captchaLabel = document.getElementById('captchaLabel');
-      const captchaAnswer = document.getElementById('captchaAnswer');
-      const captchaStatus = document.getElementById('captchaStatus');
-      const termsCheck = document.getElementById('termsCheck');
-      const submitBtn = document.getElementById('submitBtn');
-      const form = document.getElementById('enquiryForm');
-      const popup = document.getElementById('successPopup');
+<script>
+const form = document.getElementById("enquiryForm");
+const popup = document.getElementById("successPopup");
+const email = document.getElementById("emailAddress");
+const reply = document.getElementById("replyToField");
+const submit = document.getElementById("submitBtn");
+const terms = document.getElementById("termsCheck");
+const captchaInput = document.getElementById("captchaInput");
+const captchaText = document.getElementById("captchaText");
+const hiddenPackage = document.getElementById("selectedPackage");
 
-      const select = document.getElementById('packageSelect');
-      const btn = select.querySelector('.select-btn');
-      const options = select.querySelector('.select-options');
-      const selectedText = document.getElementById('selectedText');
-      const hiddenInput = document.getElementById('selectedPackage');
+const select = document.getElementById("packageSelect");
+const btn = select.querySelector(".select-btn");
+const options = select.querySelector(".select-options");
 
-      captchaLabel.textContent = `Captcha: What is ${a} + ${b}?`;
+const a = Math.floor(Math.random()*5)+2;
+const b = Math.floor(Math.random()*5)+2;
+const answer = a+b;
+captchaText.textContent = `${a} + ${b}`;
 
-      btn.addEventListener('click', function () {
-        select.classList.toggle('active');
-        options.style.display = options.style.display === 'block' ? 'none' : 'block';
-      });
+btn.onclick = () => options.style.display = options.style.display==="block"?"none":"block";
 
-      select.querySelectorAll('.option').forEach(function (option) {
-        option.addEventListener('click', function () {
-          selectedText.textContent = option.textContent;
-          hiddenInput.value = option.textContent;
-          options.style.display = 'none';
-          select.classList.remove('active');
-          updateState();
-        });
-      });
+select.querySelectorAll(".option").forEach(o=>{
+o.onclick = ()=>{
+btn.textContent = o.textContent;
+hiddenPackage.value = o.textContent;
+options.style.display="none";
+check();
+}
+});
 
-      document.addEventListener('click', function (e) {
-        if (!select.contains(e.target)) {
-          options.style.display = 'none';
-          select.classList.remove('active');
-        }
-      });
+function check(){
+const ok = Number(captchaInput.value)===answer && terms.checked && hiddenPackage.value;
+submit.disabled = !ok;
+}
 
-      function updateState() {
-        const captchaOk = Number(captchaAnswer.value) === answer;
-        const termsOk = termsCheck.checked;
-        const packageOk = hiddenInput.value.trim() !== '';
+captchaInput.oninput = check;
+terms.onchange = check;
 
-        if (captchaAnswer.value === '') {
-          captchaStatus.textContent = 'Please solve the captcha correctly before sending.';
-          captchaStatus.className = 'status small';
-        } else if (captchaOk) {
-          captchaStatus.textContent = 'Captcha correct.';
-          captchaStatus.className = 'status small ok';
-        } else {
-          captchaStatus.textContent = 'Captcha incorrect. Please try again.';
-          captchaStatus.className = 'status small bad';
-        }
+form.addEventListener("submit", async (e)=>{
+e.preventDefault();
 
-        submitBtn.disabled = !(captchaOk && termsOk && packageOk);
-        submitBtn.style.opacity = submitBtn.disabled ? '0.6' : '1';
-        submitBtn.style.cursor = submitBtn.disabled ? 'not-allowed' : 'pointer';
-      }
+reply.value = email.value;
 
-      function showSuccess() {
-        popup.classList.add('show');
-        setTimeout(function () {
-          popup.classList.remove('show');
-        }, 2600);
-      }
+const res = await fetch(form.action,{
+method:"POST",
+body:new FormData(form),
+headers:{Accept:"application/json"}
+});
 
-      captchaAnswer.addEventListener('input', updateState);
-      termsCheck.addEventListener('change', updateState);
+if(res.ok){
+form.reset();
+btn.textContent="Choose a Package";
+hiddenPackage.value="";
+popup.classList.add("show");
+setTimeout(()=>popup.classList.remove("show"),2500);
+check();
+}else{
+alert("Error sending enquiry");
+}
+});
+</script>
 
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-
-        const captchaOk = Number(captchaAnswer.value) === answer;
-        const termsOk = termsCheck.checked;
-        const packageOk = hiddenInput.value.trim() !== '';
-
-        if (!(captchaOk && termsOk && packageOk)) {
-          updateState();
-          alert('Please choose a package, agree to the terms, and complete the captcha correctly before sending.');
-          return;
-        }
-
-        try {
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          });
-
-          if (response.ok) {
-            form.reset();
-            hiddenInput.value = '';
-            selectedText.textContent = 'Choose a Package';
-            captchaAnswer.value = '';
-            termsCheck.checked = false;
-            captchaStatus.textContent = 'Please solve the captcha correctly before sending.';
-            captchaStatus.className = 'status small';
-            showSuccess();
-            updateState();
-          } else {
-            alert('There was a problem sending your enquiry. Please try again.');
-          }
-        } catch (error) {
-          alert('There was a problem sending your enquiry. Please try again.');
-        }
-      });
-
-      updateState();
-    })();
-  </script>
 </body>
 </html>
