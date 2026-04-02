@@ -4,7 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gallery | NSW Party & Rescue Sydney</title>
-  <meta name="description" content="Real gallery photos from NSW Party & Rescue across Sydney.">
+  <meta name="description" content="View real Fire Bus and party bus photos from NSW Party & Rescue across Sydney. Explore event arrivals, hens party moments, premium interiors and LED party lighting.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://partyrescue.com.au/gallery.html">
+  <link rel="icon" type="image/png" href="/logo.png">
+  <link rel="shortcut icon" href="/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -17,16 +21,19 @@
     .nav{position:sticky;top:0;z-index:50;background:rgba(6,6,6,.76);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
     .nav-inner{min-height:80px;display:flex;justify-content:space-between;align-items:center;gap:16px}
     .brand{font-size:1.2rem;font-weight:900;letter-spacing:-.03em}.brand span{color:var(--red2)}
-    .links{display:flex;gap:10px;flex-wrap:wrap}.links a{padding:10px 14px;border-radius:999px;color:#ddd;transition:.2s ease}.links a:hover{background:rgba(255,255,255,.06);color:#fff}
+    .links{display:flex;gap:10px;flex-wrap:wrap}.links a{padding:10px 14px;border-radius:999px;color:#ddd;transition:.2s ease}.links a:hover,.links a.active{background:rgba(255,255,255,.06);color:#fff}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:16px;font-weight:800;transition:transform .2s ease}.btn:hover{transform:translateY(-1px)}
     .btn-primary{background:linear-gradient(135deg,var(--red),var(--red2));box-shadow:var(--glow);color:#fff}
     .section{padding:80px 0}.section-title{max-width:900px;margin-bottom:26px}
     .kicker{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.18em;color:#ff9f94}
     h1{font-size:clamp(2.5rem,5vw,4.8rem);line-height:1.03;letter-spacing:-.045em;margin:18px 0}
+    h3{margin:0 0 10px}
     .sub{color:var(--muted);font-size:1.08rem;line-height:1.8}
     .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .gallery-card{padding:24px;border-radius:28px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));box-shadow:var(--shadow)}
     .gallery-card img{width:100%;height:300px;object-fit:cover;border-radius:18px;margin-bottom:16px}
+    .gallery-card p{color:var(--muted);line-height:1.7;margin:0}
+    .cta{margin-top:28px;padding:28px;border-radius:28px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));box-shadow:var(--shadow);text-align:center}
     .footer{padding:36px 0;border-top:1px solid var(--line);color:#9b9ba4}
     .footer-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:24px}
     @media (max-width:1024px){.gallery-grid,.footer-grid{grid-template-columns:1fr}}
@@ -40,7 +47,7 @@
       <nav class="links">
         <a href="index.html">Home</a>
         <a href="packages.html">Packages</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="gallery.html" class="active">Gallery</a>
         <a href="contact.html">Contact</a>
         <a href="terms.html">Terms</a>
       </nav>
@@ -52,64 +59,76 @@
     <div class="wrap">
       <div class="section-title">
         <div class="kicker">Gallery</div>
-        <h1>Real photos from the bus and the experience.</h1>
-        <p class="sub">This gallery uses your uploaded images directly, which is a major upgrade over placeholders.</p>
+        <h1>Real photos from the Fire Bus and the experience.</h1>
+        <p class="sub">See real NSW Party & Rescue moments across Sydney, including Fire Bus arrivals, hens party experiences, premium interiors and nightclub-style lighting.</p>
       </div>
 
       <div class="gallery-grid">
         <div class="gallery-card">
-          <img src="photo-hero.jpg" alt="NSW Party and Rescue bus exterior">
-          <h3>Exterior presence</h3>
-          <p>Big visual impact before the event even starts.</p>
+          <img src="fire-bus-sydney-night-1.jpg" alt="NSW Party and Rescue Fire Bus exterior at night in Sydney">
+          <h3>Night presence</h3>
+          <p>High-impact exterior styling for Sydney nightlife, private events and standout arrivals.</p>
         </div>
 
         <div class="gallery-card">
-          <img src="photo-bus-front.jpg" alt="NSW Party and Rescue bus front angle">
-          <h3>Arrival angle</h3>
-          <p>Great for trust and for showing scale.</p>
+          <img src="fire-bus-sydney-night-2.jpg" alt="NSW Party and Rescue Fire Bus side view at night in Sydney">
+          <h3>Full exterior view</h3>
+          <p>A strong visual showing the full Fire Bus setup and premium event look.</p>
         </div>
 
         <div class="gallery-card">
-          <img src="photo-interior-day.jpg" alt="NSW Party and Rescue interior seating">
-          <h3>Interior seating</h3>
-          <p>Luxury seating and room for the whole group.</p>
+          <img src="fire-bus-entry-sydney.jpg" alt="NSW Party and Rescue Fire Bus entry for Sydney event">
+          <h3>Event entry moment</h3>
+          <p>The entrance experience is part of what makes the booking unforgettable.</p>
         </div>
 
         <div class="gallery-card">
-          <img src="photo-lasers.jpg" alt="NSW Party and Rescue laser lighting">
-          <h3>Lighting setup</h3>
-          <p>The atmosphere is part of what makes the booking feel premium.</p>
+          <img src="hens-party-fire-bus-sydney-1.jpg" alt="Hens party Fire Bus Sydney surprise carry moment">
+          <h3>Hens party surprise</h3>
+          <p>Real hens party moments that instantly sell the experience and energy.</p>
         </div>
 
         <div class="gallery-card">
-          <img src="photo-party-red.jpg" alt="NSW Party and Rescue red party lights">
-          <h3>Party mode</h3>
-          <p>Photos like this make the site feel alive.</p>
+          <img src="hens-party-fire-bus-sydney-2.jpg" alt="Hens party Fire Bus Sydney arrival experience">
+          <h3>Arrival experience</h3>
+          <p>Perfect for hens nights, birthdays and group celebrations that need more than basic transport.</p>
         </div>
 
         <div class="gallery-card">
-          <img src="photo-party-blue.jpg" alt="NSW Party and Rescue blue party lights">
-          <h3>Blue lighting scene</h3>
-          <p>Visual variety makes the gallery stronger.</p>
+          <img src="fire-bus-interior-red.jpg" alt="NSW Party and Rescue Fire Bus interior green lighting">
+          <h3>Red interior lighting</h3>
+          <p>LED lighting transforms the bus into a full party environment.</p>
         </div>
 
         <div class="gallery-card">
-          <img src="photo-corridor.jpg" alt="NSW Party and Rescue corridor interior">
-          <h3>Custom fitout</h3>
-          <p>Detail shots give the whole brand more depth.</p>
+          <img src="fire-bus-interior-purple.jpg" alt="NSW Party and Rescue Fire Bus interior purple lighting and dance floor">
+          <h3>Purple party setup</h3>
+          <p>A premium interior look with seating, lighting and dance-floor energy.</p>
         </div>
 
         <div class="gallery-card">
-          <img src="photo-hero.jpg" alt="NSW Party and Rescue event arrival">
-          <h3>Event arrival</h3>
-          <p>A strong exterior shot for event pages and promotions.</p>
+          <img src="fire-bus-interior-pink.jpg" alt="NSW Party and Rescue Fire Bus interior red nightclub lighting">
+          <h3>Nightclub vibe</h3>
+          <p>Perfect for late-night events, private bookings and memorable Sydney parties.</p>
         </div>
 
         <div class="gallery-card">
-          <img src="photo-bus-front.jpg" alt="NSW Party and Rescue luxury bus setup">
-          <h3>Luxury bus setup</h3>
-          <p>Extra visual depth for a stronger, more premium gallery layout.</p>
+          <img src="fire-bus-nightclub.jpg" alt="NSW Party and Rescue Fire Bus interior red nightclub lighting">
+          <h3>Nightclub vibe</h3>
+          <p>Perfect for late-night events, private bookings and memorable Sydney parties.</p>
         </div>
+
+        <div class="gallery-card">
+          <img src="photo-interior-day.jpg" alt="NSW Party and Rescue Fire Bus interior seating during daytime">
+          <h3>Daytime interior view</h3>
+          <p>A clear look at the spacious seating and layout before the lights come on.</p>
+        </div>
+      </div>
+
+      <div class="cta">
+        <h3>Ready to book your event?</h3>
+        <p class="sub" style="margin:0 0 16px">Check availability for hens nights, birthdays, private charters and Fire Bus experiences across Sydney.</p>
+        <a class="btn btn-primary" href="contact.html">Send Enquiry</a>
       </div>
     </div>
   </section>
@@ -122,11 +141,22 @@
       </div>
       <div>
         <b style="color:#fff">Quick Links</b>
-        <p><a href="index.html">Home</a><br><a href="packages.html">Packages</a><br><a href="gallery.html">Gallery</a><br><a href="contact.html">Contact</a><br><a href="terms.html">Terms</a></p>
+        <p>
+          <a href="index.html">Home</a><br>
+          <a href="packages.html">Packages</a><br>
+          <a href="gallery.html">Gallery</a><br>
+          <a href="contact.html">Contact</a><br>
+          <a href="terms.html">Terms</a><br>
+          <a href="service-areas.html">Service Areas</a>
+        </p>
       </div>
       <div>
         <b style="color:#fff">Contact</b>
-        <p><a href="tel:+611300036469">1300 036 469</a><br><a href="mailto:danny@enginenumber9.com.au">danny@enginenumber9.com.au</a><br>Sydney Olympic Park Homebush</p>
+        <p>
+          <a href="tel:+611300036469">1300 036 469</a><br>
+          <a href="mailto:danny@enginenumber9.com.au">danny@enginenumber9.com.au</a><br>
+          Sydney Olympic Park Homebush
+        </p>
       </div>
     </div>
   </footer>
