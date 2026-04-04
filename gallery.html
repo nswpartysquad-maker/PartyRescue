@@ -39,7 +39,6 @@
 
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
-
     .wrap{max-width:1280px;margin:0 auto;padding:0 22px}
 
     .nav{
@@ -90,6 +89,11 @@
       box-shadow:var(--glow);
       color:#fff;
     }
+    .btn-secondary{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:#fff;
+    }
 
     .hero{
       padding:78px 0 34px;
@@ -126,14 +130,24 @@
       margin-top:24px;
     }
 
-    .btn-secondary{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      color:#fff;
-    }
-
     .gallery-wrap{
       padding:34px 0 80px;
+    }
+
+    .highlight{
+      margin:0 0 26px;
+      padding:24px;
+      border-radius:28px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
+      box-shadow:var(--shadow);
+    }
+
+    .highlight p{
+      margin:0;
+      color:#ddd;
+      line-height:1.8;
+      font-size:1rem;
     }
 
     .gallery-grid{
@@ -199,22 +213,6 @@
       color:var(--muted);
       line-height:1.7;
       font-size:.98rem;
-    }
-
-    .highlight{
-      margin:0 0 26px;
-      padding:24px;
-      border-radius:28px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
-      box-shadow:var(--shadow);
-    }
-
-    .highlight p{
-      margin:0;
-      color:#ddd;
-      line-height:1.8;
-      font-size:1rem;
     }
 
     .cta{
@@ -339,7 +337,7 @@
       }
       .gallery-card.large .gallery-media{height:300px}
       .gallery-card.medium .gallery-media{height:340px}
-      .gallery-card.small .gallery-media{height:420px}
+      .gallery-card.small .gallery-media{height:440px}
       .hero{padding-top:66px}
     }
   </style>
@@ -363,7 +361,7 @@
     <div class="wrap">
       <div class="kicker">Gallery</div>
       <h1>Real photos from the Fire Bus and the experience.</h1>
-      <p class="sub">See real NSW Party & Rescue moments across Sydney, including Fire Bus arrivals, hens party experiences, premium interiors and nightclub-style lighting.</p>
+      <p class="sub">See real NSW Party & Rescue moments across Sydney, including Fire Bus arrivals, hens party experiences, premium interiors, limo-style seating and nightclub-style lighting.</p>
 
       <div class="hero-actions">
         <a class="btn btn-primary" href="contact.html">Check Availability</a>
@@ -375,7 +373,7 @@
   <section class="gallery-wrap">
     <div class="wrap">
       <div class="highlight">
-        <p>These are real event photos from NSW Party & Rescue. Tap any image to view it full size. The gallery is arranged to show the full story — exterior impact, hens party entrances, real guest moments and the premium interior party atmosphere.</p>
+        <p>These are real event photos from NSW Party & Rescue. Tap any image to view it full size. The gallery is arranged to show the full story — exterior impact, hens party entrances, real guest moments, bar area, limo-style seating and premium interior party atmosphere.</p>
       </div>
 
       <div class="gallery-grid">
@@ -429,27 +427,27 @@
           </div>
         </article>
 
-        <article class="gallery-card medium" data-image="fire-bus-limo-seating.jpg" data-caption="Limo-style seating — premium group comfort inside the Fire Bus.">
+        <article class="gallery-card medium" data-image="limo-seat.jpg" data-caption="Limo-style seating — premium group comfort inside the Fire Bus.">
           <div class="gallery-media">
-            <img src="fire-bus-limo-seating.jpg" alt="NSW Party and Rescue Fire Bus limo-style seating">
+            <img src="limo-seat.jpg" alt="NSW Party and Rescue Fire Bus limo-style seating">
           </div>
           <div class="gallery-content">
             <h3>Limo-style seating</h3>
-            <p>A premium seating setup designed for comfort, style and group atmosphere.</p>
+            <p>Premium seating built for comfort, style and the full group party experience.</p>
           </div>
         </article>
 
-        <article class="gallery-card small" data-image="fire-bus-interior-green.jpg" data-caption="Green interior lighting — LED effects that transform the bus into a party space.">
+        <article class="gallery-card medium" data-image="drink-bar.jpg" data-caption="Drinks bar area — built for atmosphere and celebration.">
           <div class="gallery-media">
-            <img src="fire-bus-interior-green.jpg" alt="NSW Party and Rescue Fire Bus interior green LED lighting">
+            <img src="drink-bar.jpg" alt="NSW Party and Rescue Fire Bus drinks bar area">
           </div>
           <div class="gallery-content">
-            <h3>Green interior lighting</h3>
-            <p>LED lighting transforms the bus into a full party environment.</p>
+            <h3>Drinks bar setup</h3>
+            <p>A dedicated party-ready area that helps create a premium onboard feel.</p>
           </div>
         </article>
 
-        <article class="gallery-card medium" data-image="fire-bus-interior-purple.jpg" data-caption="Purple party setup — premium lighting, seating and dance-floor energy.">
+        <article class="gallery-card small" data-image="fire-bus-interior-purple.jpg" data-caption="Purple party setup — premium lighting, seating and dance-floor energy.">
           <div class="gallery-media">
             <img src="fire-bus-interior-purple.jpg" alt="NSW Party and Rescue Fire Bus interior purple lighting">
           </div>
@@ -459,13 +457,23 @@
           </div>
         </article>
 
-        <article class="gallery-card medium" data-image="fire-bus-interior-red.jpg" data-caption="Red nightclub vibe — perfect for late-night events and memorable Sydney parties.">
+        <article class="gallery-card small" data-image="fire-bus-interior-red.jpg" data-caption="Red nightclub vibe — perfect for late-night events and memorable Sydney parties.">
           <div class="gallery-media">
             <img src="fire-bus-interior-red.jpg" alt="NSW Party and Rescue Fire Bus interior red nightclub lighting">
           </div>
           <div class="gallery-content">
             <h3>Red nightclub vibe</h3>
             <p>Perfect for late-night events, private bookings and unforgettable party nights.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card medium" data-image="fire-bus-nightclub.jpg" data-caption="Nightclub-style interior — LED effects and full party atmosphere inside the Fire Bus.">
+          <div class="gallery-media">
+            <img src="fire-bus-nightclub.jpg" alt="NSW Party and Rescue Fire Bus nightclub interior lighting">
+          </div>
+          <div class="gallery-content">
+            <h3>Nightclub-style interior</h3>
+            <p>LED effects and premium interiors that make the bus feel like part of the event.</p>
           </div>
         </article>
       </div>
