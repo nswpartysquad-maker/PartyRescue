@@ -8,27 +8,63 @@
   </url>
 
   <!-- CORE -->
-  <url><loc>https://partyrescue.com.au/contact.html</loc></url>
-  <url><loc>https://partyrescue.com.au/packages.html</loc></url>
-  <url><loc>https://partyrescue.com.au/gallery.html</loc></url>
-  <url><loc>https://partyrescue.com.au/service-areas.html</loc></url>
-  <url><loc>https://partyrescue.com.au/terms.html</loc></url>
+  <url>
+    <loc>https://partyrescue.com.au/contact.html</loc>
+  </url>
+  <url>
+    <loc>https://partyrescue.com.au/packages.html</loc>
+  </url>
+  <url>
+    <loc>https://partyrescue.com.au/gallery.html</loc>
+  </url>
+  <url>
+    <loc>https://partyrescue.com.au/service-areas.html</loc>
+  </url>
+  <url>
+    <loc>https://partyrescue.com.au/terms.html</loc>
+  </url>
 
   <!-- SEO -->
-  <url><loc>https://partyrescue.com.au/party-bus-sydney.html</loc></url>
-  <url><loc>https://partyrescue.com.au/hens-party-bus-sydney.html</loc></url>
-  <url><loc>https://partyrescue.com.au/fire-bus-hire-sydney.html</loc></url>
-  <url><loc>https://partyrescue.com.au/limousine-hire-sydney.html</loc></url>
+  <url>
+    <loc>https://partyrescue.com.au/party-bus-sydney.html</loc>
+  </url>
+  <url>
+    <loc>https://partyrescue.com.au/hens-party-bus-sydney.html</loc>
+  </url>
+  <url>
+    <loc>https://partyrescue.com.au/fire-bus-hire-sydney.html</loc>
+  </url>
+  <url>
+    <loc>https://partyrescue.com.au/limousine-hire-sydney.html</loc>
+  </url>
 
   <!-- SUBURBS -->
-  <url><loc>https://partyrescue.com.au/party-bus-bankstown.html</loc></url>
-  <url><loc>https://partyrescue.com.au/party-bus-burwood.html</loc></url>
-  <url><loc>https://partyrescue.com.au/party-bus-cabramatta.html</loc></url>
-  <url><loc>https://partyrescue.com.au/party-bus-campsie.html</loc></url>
-  <url><loc>https://partyrescue.com.au/party-bus-fairfield.html</loc></url>
-  <url><loc>https://partyrescue.com.au/party-bus-homebush.html</loc></url>
-  <url><loc>https://partyrescue.com.au/party-bus-hurstville.html</loc></url>
-  <url><loc>https://partyrescue.com.au/party-bus-liverpool.html</loc></url>
-  <url><loc>https://partyrescue.com.au/party-bus-parramatta.html</loc></url>
+  <url>
+    <loc>https://partyrescue.com.au/party-bus-bankstown.html</loc>
+  </url>
+  <url>
+    <loc>https://partyrescue.com.au/party-bus-burwood.html</loc>
+  </url>
+  <url>
+    <loc>https://partyrescue.com.au/party-bus-cabramatta.html</loc>
+  </url>
+  <url>
+    <loc>https://partyrescue.com.au/party-bus-campsie.html</loc>
+  </url>
+  <url>
+    <loc>https://partyrescue.com.au/party-bus-fairfield.html</loc>
+  </url>
+  <url>
+    <loc>https://partyrescue.com.au/party-bus-homebush.html</loc>
+  </url>
+  <url>
+    <loc>https://partyrescue.com.au/party-bus-hurstville.html</loc>
+  </url>
+  <url>
+    <loc>https://partyrescue.com.au/party-bus-liverpool.html</loc>
+  </url>
+  <url>
+    <loc>https://partyrescue.com.au/party-bus-parramatta.html</loc>
+  </url>
 
 </urlset>
