@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://partyrescue.com.au/sitemap.xml
+Host: https://partyrescue.com.au
